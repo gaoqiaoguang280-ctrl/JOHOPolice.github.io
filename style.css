@@ -260,4 +260,134 @@ hr {
   .md-justify-between {
     justify-content: space-between;
   }
+	/* =========================
+   スマホ対応（重要）
+========================= */
+@media screen and (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* ===== 共通：強制リセット ===== */
+  header,
+  .main2,
+  .foot1,
+  .breadcrumb,
+  .fot,
+  .soutastatus,
+  .view,
+  .nav,
+  .footer__navi,
+  .hito {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ===== ヘッダー ===== */
+  .head1 {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .head2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .headlogo {
+    height: auto;
+    max-width: 120px;
+  }
+
+  /* ===== ナビ：縦並び ===== */
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+  /* ===== パンくず ===== */
+  .breadcrumb {
+    padding: 10px;
+    font-size: 12px;
+    width: auto;
+    border-bottom: 1px solid black;
+  }
+
+  /* ===== 見出し ===== */
+  h1 {
+    font-size: 28px;
+    margin: 20px 10px;
+  }
+
+  .name {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  /* ===== 写真：縦並び ===== */
+  .fot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .souta,
+  .cam {
+    width: 90%;
+    height: auto;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+
+  /* ===== 人物情報 ===== */
+  .soutastatus {
+    margin-top: 20px;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  td {
+    padding: 8px;
+  }
+
+  /* ===== 説明文 ===== */
+  .memo {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ===== フッター ===== */
+  .footlogo {
+    height: auto;
+    max-width: 100px;
+  }
+
+  .footer__navi {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .footer__navi li {
+    margin: 5px 0;
+  }
+
+}
+
 }
