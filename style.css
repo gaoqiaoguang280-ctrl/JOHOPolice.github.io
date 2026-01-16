@@ -331,3 +331,26 @@ a:hover {
     height: auto;
   }
 }
+
+/* ===== スマホでフッターが見切れない対策 ===== */
+footer{
+  overflow: visible;      /* 見切れ防止 */
+  padding: 12px 0;        /* 高さ確保 */
+}
+
+.foot1{
+  margin-left: 0 !important;      /* スマホでは中央寄せにする */
+  display: flex;
+  justify-content: center;
+}
+
+.footlogo{
+  max-width: 90vw;        /* 画面内に収める */
+  height: auto !important;/* 高さ固定を解除して比率維持 */
+}
+
+.foot2{
+  padding: 10px 12px;     /* 文字が切れないように */
+  text-align: center;
+  line-height: 1.4;
+}
