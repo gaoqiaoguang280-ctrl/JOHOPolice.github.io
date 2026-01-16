@@ -252,142 +252,150 @@ hr {
   margin-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
-  .md-flex {
-    display: flex;
-  }
+/* ===== レスポンシブ上書き（PCの見た目を変えない）===== */
 
-  .md-justify-between {
-    justify-content: space-between;
-  }
-	/* =========================
-   スマホ対応（重要）
-========================= */
-@media screen and (max-width: 768px) {
+/* 画像がはみ出さない保険 */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-  body {
-    font-size: 14px;
-  }
-
-  /* ===== 共通：強制リセット ===== */
-  header,
+/* 1200px以下：大きい固定marginを縮めて“同じ構造のまま”収める */
+@media (max-width: 1200px) {
+  .head2,
   .main2,
-  .foot1,
-  .breadcrumb,
-  .fot,
-  .soutastatus,
-  .view,
-  .nav,
-  .footer__navi,
-  .hito {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .foot1 {
+    margin-left: 40px;
   }
 
-  /* ===== ヘッダー ===== */
-  .head1 {
-    font-size: 14px;
-    padding: 10px 0;
+  .breadcrumb {
+    margin-left: 40px;
+  }
+
+  .nav {
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+}
+
+/* 768px以下：2カラム（写真＋情報）を縦積みにして崩れ防止 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 34px;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .fot {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* いまは .soutastatus が margin-top:-315px で重ねているので、
+     スマホだけ解除して縦並びにします */
+  .soutastatus {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .name,
+  .memo {
+    margin-left: 0;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  table {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  td {
+    padding: 10px 6px;
+    vertical-align: top;
+  }
+
+  /* ナビを折り返し */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    padding-bottom: 14px;
+  }
+
+  .nav a {
+    margin-right: 0;
   }
 
   .head2 {
     margin-left: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .headlogo {
-    height: auto;
-    max-width: 120px;
+    height: 110px;
   }
 
-  /* ===== ナビ：縦並び ===== */
-  .nav {
+  .foot1 {
+    margin-left: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+    justify-content: center;
   }
 
-  .nav a {
-    margin: 5px 0;
-    font-size: 16px;
+  .footlogo {
+    height: 95px;
   }
 
-  /* ===== パンくず ===== */
   .breadcrumb {
-    padding: 10px;
-    font-size: 12px;
-    width: auto;
-    border-bottom: 1px solid black;
+    margin-left: 0;
   }
 
-  /* ===== 見出し ===== */
-  h1 {
-    font-size: 28px;
-    margin: 20px 10px;
+  .main2 {
+    margin-left: 0;
+    padding: 0 16px;
   }
 
-  .name {
-    font-size: 22px;
-    margin: 10px 0;
+  .view {
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .title {
-    font-size: 22px;
-  }
-
-  /* ===== 写真：縦並び ===== */
+  /* 画像2枚を横並び→スマホでは縦 or 折返し */
   .fot {
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
   }
 
   .souta,
   .cam {
-    width: 90%;
+    width: min(320px, 100%);
     height: auto;
-    max-width: 300px;
-    margin-bottom: 10px;
   }
+}
 
-  /* ===== 人物情報 ===== */
-  .soutastatus {
+/* 480px以下：文字・余白を少しだけ詰める */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
     margin-top: 20px;
   }
 
-  table {
-    width: 100%;
-    font-size: 14px;
+  .name {
+    font-size: 28px;
   }
 
-  td {
-    padding: 8px;
-  }
-
-  /* ===== 説明文 ===== */
   .memo {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.6;
   }
 
-  /* ===== フッター ===== */
-  .footlogo {
-    height: auto;
-    max-width: 100px;
+  .title {
+    font-size: 24px;
   }
-
-  .footer__navi {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
-
-  .footer__navi li {
-    margin: 5px 0;
-  }
-
 }
 
-}
